@@ -56,7 +56,7 @@ try
 		if($rec==false)
 		{
 			print 'パスワードが間違っています。<br />';
-			print '<a href="member_login.html">戻る</a>';
+			print '<a href="../member_login.html">戻る</a>';
 			exit();
 		}
 		else
