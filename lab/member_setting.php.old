@@ -1,0 +1,49 @@
+<?php
+session_start();
+session_regenerate_id(true);
+if(isset($_SESSION["member_login"])==false)
+{
+	print "セッションが切れました。<br />";
+	print "<a href='member_login.html'>ログイン画面へ</a><br />";
+	exit();
+}
+else
+{
+	print 'ようこそ、';
+	print $_SESSION["member_name"];
+	print ' 様    ';
+	print '<a href="member_logout.php">ログアウト</a><br />';
+	print '<br />';
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 出欠確認表 </title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+	<header>
+		<h1>Web-2ru</h1>
+	</header>
+	<section class="information">
+		<h1>在室確認表</h1>
+	</section>
+</div>
+
+<section class="content">
+<a href="member_change_name.php">名前変更</a><br />
+<br />
+<a href="member_change_pass.php">パスワード変更</a><br />
+<br />
+<br />
+<br />
+<a href="mypage.php">戻る</a><br />
+</section>
+
+</body>
+</html>

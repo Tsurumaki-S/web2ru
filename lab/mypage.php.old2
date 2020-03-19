@@ -1,0 +1,147 @@
+<?php
+require_once("../common/common.php");
+session_start();
+session_regenerate_id(true);
+if(isset($_SESSION["member_login"])==false)
+{ msg_out_session(); }
+else
+{ msg_in_session();  }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="refresh" content=180; URL="mypage.php">
+<title> 出欠確認表 </title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<?php subtitle("在室確認表"); ?>
+
+<section class="content">
+<?php
+try
+{
+	$dsn = "mysql:dbname=lab_attendance;host=localhost;charset=utf8";
+	$user = "root";
+	$password = "";
+	$dbh = new PDO($dsn,$user,$password);
+	$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	$sql  = "SELECT status FROM dat_status
+			 WHERE  code_member=?
+			 ORDER BY time DESC LIMIT 1";
+	$stmt = $dbh->prepare($sql);
+	$data[] = $_SESSION['member_code'];
+	$stmt->execute($data);
+	$rec = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+catch (Exception $e)
+{
+	print "ただいま障害により大変ご迷惑をお掛けしております。";
+	exit();
+}
+
+?>
+
+YOUR STATUS: <?php print $rec["status"]; ?>
+<br />
+<br />
+
+CHANGE STATUS
+<br />
+<form method="post" class="btn-flat-border-base" action="member_change_status.php">
+	<input type="submit" class="btn-flat-border" name="new_status" value="在室" />
+	<input type="submit" class="btn-flat-border" name="new_status" value="帰宅" />
+	<input type="submit" class="btn-flat-border" name="new_status" value="会議" />
+	<input type="submit" class="btn-flat-border" name="new_status" value="食事" />
+	<input type="submit" class="btn-flat-border" name="new_status" value="出張" />
+	<input type="submit" class="btn-flat-border" name="new_status" value="その他" />
+</form>
+
+CHANGE MEMO
+<br />
+<form method="post" action="member_change_memo.php">
+<input type="text" name="new_memo" style="width:200px"><br />
+<input type="submit" value="変更" />
+</form>
+
+<?php
+
+try
+{
+	$sql  = "SELECT name,code FROM mst_member WHERE 1";
+	$stmt_member = $dbh->prepare($sql);
+	$stmt_member->execute();
+}
+catch (Exception $e)
+{
+	print "ただいま障害により大変ご迷惑をお掛けしております。";
+	exit();
+}
+
+?>
+
+
+<?php /* make table */
+
+	print '<table>';
+	print '<tr>';
+	print '<th>NAME</th>';
+	print '<th>STATUS</th>';
+	print '<th>MEMO</th>';
+	print '</tr>';
+	print '<br />';
+	print '<br />';
+	print "MEMBER<br /><br />";
+
+	while(true)
+	{
+		$rec_member = $stmt_member->fetch(PDO::FETCH_ASSOC);
+
+		if($rec_member==false)
+		{
+			break;
+		}
+
+		$code_member = $rec_member['code'];
+
+		$sql  = "SELECT status FROM dat_status
+		         WHERE  code_member=?
+				 ORDER BY time DESC LIMIT 1";
+		$stmt = $dbh->prepare($sql);
+		$data = array();
+		$data[] = $code_member;
+		$stmt->execute($data);
+		$rec_status = $stmt->fetch(PDO::FETCH_ASSOC);
+		$now_status = $rec_status['status'];
+
+		$sql  = "SELECT memo FROM dat_memo
+		         WHERE  code_member=?
+				 ORDER BY time DESC LIMIT 1";
+		$stmt = $dbh->prepare($sql);
+		$data = array();
+		$data[] = $code_member;
+		$stmt->execute($data);
+		$rec_memo = $stmt->fetch(PDO::FETCH_ASSOC);
+		$now_memo = $rec_memo['memo'];
+		print '<tr>';
+		print '<td>';
+		print $rec_member["name"];
+		print '</td>';
+		print '<td>';
+		print $now_status;
+		print '</td>';
+		print '<td>';
+		print $now_memo;
+		print '</td>';
+		print '</tr>';
+	}
+	$dbh  = null;
+?>
+</section>
+
+</body>
+</html>
