@@ -10,6 +10,7 @@ msg_out_session(); else msg_in_session();
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
 <title> 出欠確認表 </title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -62,8 +63,8 @@ else
 {
 	$member_pass=md5($member_pass);
 	print "<form method='post' action='member_add_done.php'>";
-	print "<input type='hidden' name='name'    value='".$member_name."'>";
-	print "<input type='hidden' name='pass'    value='".$member_pass."'>";
+	print "<input type='hidden' name='name'  value='".$member_name."'>";
+	print "<input type='hidden' name='pass'  value='".$member_pass."'>";
 	print "<input type='hidden' name='admin' value='".$member_admin."'>";
 	print "<br />";
 	print "<input type='button' onclick='history.back()' value='戻る'>";
