@@ -26,8 +26,21 @@ try
 
 	if($rec==false)
 	{
+		print '<!DOCTYPE html>';
+		print '<html>';
+		print '<head>';
+		print '<meta charset="UTF-8">';
+		print '<meta name="viewport" content="width=device-width">';
+		print '<title> 出欠確認表 </title>';
+		print '<link rel="stylesheet" href="../css/style.css">';
+		print '</head>';
+		print '<body>';
+		print '<section class="content">';
 		print '名前かパスワードが間違っています。<br />';
 		print '<a href="../member_login.html">戻る</a>';
+		print '</section>';
+		print '</body>';
+		print '</html>';
 	}
 	else
 	{

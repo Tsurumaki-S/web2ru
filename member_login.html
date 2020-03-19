@@ -11,15 +11,22 @@
 <section class="content">
 	<h1 >ログイン<br /></h1>
 	<br />
+	<div class="control">
+	<div id="normal_box">
+	名前とパスワードを入力してください。
+	</div>
+	</div>
 	<form method="post" action="lab/member_login_check.php">
 		<div class="control">
-			<input id="under_line" type="text" name="name" placeholder="名前を入力してください。">
+			<!--<input id="under_line" type="text" name="name" placeholder="名前">-->
+			<input id="normal_box" type="text" name="name" placeholder="名前">
 		</div>
 		<div class="control">
-			<input id="under_line" type="password" name="pass" placeholder="パスワードを入力してください。"><br />
+			<!--<input id="under_line" type="password" name="pass" placeholder="パスワード"><br />-->
+			<input id="normal_box" type="password" name="pass" placeholder="パスワード"><br />
 		</div>
 		<div class="control">
-			<button type="submit">ログイン</button>
+			<button id="normal_box" type="submit">ログイン</button>
 		</div>
 	</form>
 </section>

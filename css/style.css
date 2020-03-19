@@ -18,7 +18,10 @@
 
 .control
 {
-	margin-bottom: 3em;
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container
@@ -72,9 +75,15 @@ input
 }
 */
 
+#normal_box
+{
+	width: 70%;
+	padding: 8px;
+}
+
 #under_line
 {
-	width: 100%;
+	width: 70%;
 	padding: 8px;
 	border-right: none;
 	border-left: none;
@@ -85,7 +94,8 @@ input
 button
 {
 	width: 100%;
-	background-color: #2096F3;
+	/*background-color: #2096F3;*/
+	background-color: #ff8c00; /* darkorange */
 	color: #fff;
 	padding: 15px;
 	border-radius: 15px;
