@@ -12,6 +12,7 @@ msg_out_session(); else msg_in_session();
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
 <title> 出欠確認表 </title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
