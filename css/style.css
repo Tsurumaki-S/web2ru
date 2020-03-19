@@ -186,6 +186,7 @@ table th,table td
 {
 	.btn-flat-border
 	{
+	    padding: 1em 1em;
 		justify-content: center;
 		width: 100%;
 	}
