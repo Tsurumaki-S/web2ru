@@ -77,8 +77,21 @@ function pulldown_day()
 
 function msg_out_session()
 {
-	print "セッションが切れました。<br />";
-	print "<a href='member_login.html'>ログイン画面へ</a><br />";
+		print '<!DOCTYPE html>';
+		print '<html>';
+		print '<head>';
+		print '<meta charset="UTF-8">';
+		print '<meta name="viewport" content="width=device-width">';
+		print '<title> 出欠確認表 </title>';
+		print '<link rel="stylesheet" href="../css/style.css">';
+		print '</head>';
+		print '<body>';
+		print '<section class="content">';
+		print "セッションが切れました。<br />";
+		print "<a href='../member_login.html'>ログイン画面へ</a><br />";
+		print '</section>';
+		print '</body>';
+		print '</html>';
 	exit();
 }
 
