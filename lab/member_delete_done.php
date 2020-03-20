@@ -52,7 +52,7 @@ catch(Exception $e)
 削除しました。<br />
 <br />
 
-<a href="mypage.php">戻る</a>
+<a href="mypage.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

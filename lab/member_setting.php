@@ -27,7 +27,7 @@ msg_out_session(); else msg_in_session();
 <br />
 <br />
 <br />
-<a href="mypage.php">戻る</a><br />
+<a href="mypage.php" class="btn-border-bottom">戻る</a><br />
 </section>
 
 </body>

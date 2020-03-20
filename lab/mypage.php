@@ -49,9 +49,18 @@ STATUS
 MEMO
 <br />
 <form method="post" action="member_change_memo.php">
-	<input type="text" name="new_memo" class="memo"><br />
-	<input type="submit" value="メモ更新" />
+	<div class="centering">
+	<!--<div class="centering_parent">
+		<div class="centering_item">-->
+			<!--<input type="text" name="new_memo" class="memo"><br />-->
+			<!--<input type="submit" class="memo input_submit" value="メモ更新" />-->
+			<input id="sbox5"  id="s" name="new_memo" type="text" placeholder="メモを入力" />
+			<input id="sbtn5" type="submit" value="更新" />
+	<!--</div>
+	</div>-->
+	</div>
 </form>
+
 
 <!-- make and display all member's status table -->
 <?php display_table($dbh); ?>

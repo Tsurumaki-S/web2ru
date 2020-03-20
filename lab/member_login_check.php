@@ -37,7 +37,7 @@ try
 		print '<body>';
 		print '<section class="content">';
 		print '名前かパスワードが間違っています。<br />';
-		print '<a href="../member_login.html">戻る</a>';
+		print '<a href="../member_login.html" class="btn-border-bottom">戻る</a>';
 		print '</section>';
 		print '</body>';
 		print '</html>';
