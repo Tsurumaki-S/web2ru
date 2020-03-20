@@ -52,7 +52,7 @@ catch(Exception $e)
 
 ?>
 
-<a href="mypage.php">戻る</a>
+<a href="mypage.php" class="btn-border-bottom">戻る</a>
 
 </section>
 </body>

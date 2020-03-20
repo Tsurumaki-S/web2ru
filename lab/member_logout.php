@@ -27,7 +27,7 @@ session_destroy();
 
 ログアウトしました。<br />
 <br />
-<a href="../member_login.html">ログイン画面へ</a>
+<a href="../member_login.html" class="btn-border-bottom">ログイン画面へ</a>
 
 </section>
 </body>
