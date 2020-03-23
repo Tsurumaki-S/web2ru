@@ -42,7 +42,8 @@ try
 	if( $new_name=="" || $member_pass=="" )
 	{
 		print "<form>";
-		print "<input type='button' onclick='history.back()' value='戻る'>";
+		//print "<input type='button' onclick='history.back()' value='戻る'>";
+		print '<input type="button" onclick="history.back()" class="button-ok" value="戻る">';
 		print "</form>";
 		exit();
 	}
@@ -80,8 +81,8 @@ try
 			print "名前を変更してよろしいですか。";
 			print '<form method="post" action="member_change_name_done.php">';
 			print "<input type='hidden' name='new_name' value='".$new_name."'>";
-			print '<input type="button" onclick="history.back()" value="戻る">';
-			print '<input type="submit" value="OK">';
+			//print '<input type="button" onclick="history.back()" value="戻る">';
+			print '<input type="submit" class="button-ok" value="OK">';
 			print '</form>';
 		}
 	}
@@ -92,6 +93,8 @@ catch(Exception $e)
 	exit();
 }
 ?>
+
+<a href="member_change_name.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

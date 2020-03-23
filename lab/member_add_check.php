@@ -61,18 +61,21 @@ if($member_name=="" || $member_pass=="" || $member_pass != $member_pass2)
 }
 else
 {
+	print "メンバーを追加します。";
 	$member_pass=md5($member_pass);
 	print "<form method='post' action='member_add_done.php'>";
 	print "<input type='hidden' name='name'  value='".$member_name."'>";
 	print "<input type='hidden' name='pass'  value='".$member_pass."'>";
 	print "<input type='hidden' name='admin' value='".$member_admin."'>";
 	print "<br />";
-	print "<input type='button' onclick='history.back()' value='戻る'>";
-	print "<input type='submit' value='OK'>";
+	//print "<input type='button' onclick='history.back()' value='戻る'>";
+	print "<input type='submit' class='button-ok' value='OK'>";
 	print "</form>";
 }
 
 ?>
+
+<a href="member_add.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

@@ -338,3 +338,37 @@ border-radius:5px;
 		text-align: center;
 	}
 }
+
+/* reference: https://webparts.cman.jp/button/submit/ */
+.button-ok {
+  display       : inline-block;
+  border-radius : 5px;
+  /*font-size     : 18pt;*/
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 3px 3px;
+  background    : #ff8c00; /* darkorange */
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : 3px 3px 3px #666666;
+  border        : 2px solid #ff8c00;
+}
+.button-ok:hover {
+  box-shadow    : none;
+  color         : #ff8c00;
+  background    : #ffffff;
+}
+
+.table-color
+{
+	/*background-color: #ff8c00;*/ /* darkorange */
+	/*background-color: #8b4513;*/ /* saddlebrown */
+	/*background-color: #a0522d;*/ /* sienna */
+	background-color: #deb887; /* burlywood */
+	/*color: #ffffff;*/ /* white */
+	/*color: #666;*/ /* gray */
+	/*color: #000000;*/ /* black */
+	color: #696969; /* dimgray */
+	font-size: 1.2em;
+}

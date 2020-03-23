@@ -30,7 +30,7 @@ try
 	{
 		print "パスワードが入力されていません。<br />";
 		print "<form>";
-		print "<input type='button' onclick='history.back()' value='戻る'>";
+		print "<input type='button' class='button-ok' onclick='history.back()' value='戻る'>";
 		print "</form>";
 		exit();
 	}
@@ -57,7 +57,10 @@ try
 		if($rec==false)
 		{
 			print 'パスワードが間違っています。<br />';
-			print '<a href="../member_login.html" class="btn-border-bottom">戻る</a>';
+			//print '<a href="../member_login.html" class="btn-border-bottom">戻る</a>';
+			print "<form>";
+			print "<input type='button' class='button-ok' onclick='history.back()' value='戻る'>";
+			print "</form>";
 			exit();
 		}
 		else
@@ -70,8 +73,8 @@ try
 			print '再度、新しいパスワードを入力してください。<br />';
 			print '<input type="password" name="pass2" style="width:200px"><br />';
 			print '<br />';
-			print '<input type="button" onclick="history.back()" value="戻る">';
-			print '<input type="submit" value="OK">';
+			//print '<input type="button" onclick="history.back()" value="戻る">';
+			print '<input type="submit" class="button-ok" value="OK">';
 			print '</form>';
 		}
 	}
@@ -82,6 +85,8 @@ catch(Exception $e)
 	exit();
 }
 ?>
+
+<a href="member_change_pass.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

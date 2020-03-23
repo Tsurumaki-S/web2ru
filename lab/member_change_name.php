@@ -26,9 +26,11 @@ msg_out_session(); else msg_in_session();
 		パスワードを入力してください。<br />
 		<input type="password" name="pass" style="width:200px"><br />
 		<br />
-		<input type="button" onclick="history.back()" value="戻る">
-		<input type="submit" value="OK">
+		<!--<input type="button" onclick="history.back()" value="戻る">-->
+		<input type="submit" class="button-ok" value="OK">
 	</form>
+
+<a href="member_setting.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

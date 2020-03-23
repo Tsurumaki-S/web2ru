@@ -32,7 +32,7 @@ try
 	{
 		print "新しいパスワードが２度入力されていません。<br />";
 		print "<form>";
-		print "<input type='button' onclick='history.back()' value='戻る'>";
+		print "<input type='button' class='button-ok' onclick='history.back()' value='戻る'>";
 		print "</form>";
 		exit();
 	}
@@ -49,8 +49,8 @@ try
 		print "パスワードを変更してよろしいですか。";
 		print '<form method="post" action="member_change_pass_done.php">';
 		print "<input type='hidden' name='new_pass' value='".$new_pass1."'>";
-		print '<input type="button" onclick="history.back()" value="戻る">';
-		print '<input type="submit" value="OK">';
+		//print '<input type="button" onclick="history.back()" value="戻る">';
+		print '<input type="submit" class="button-ok" value="OK">';
 		print '</form>';
 	}
 }
@@ -60,6 +60,8 @@ catch(Exception $e)
 	exit();
 }
 ?>
+
+<a href="member_change_pass.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

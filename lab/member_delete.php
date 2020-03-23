@@ -50,14 +50,14 @@ try
 			break;
 		}
 
-		print "<input type='radio' name='member_code' value='".$rec["code"]."'>";
+		print "<label><input type='radio' name='member_code' value='".$rec["code"]."'>";
 		print $rec["name"];
-		print "<br />";
+		print "</label>";
 	}
 
 	print "<br />";
-	print '<input type="button" onclick="history.back()" value="戻る">';
-	print "<input type='submit' name='delete' value='削除'>";
+	//print '<input type="button" onclick="history.back()" value="戻る">';
+	print "<input type='submit' class='button-ok' name='delete' value='削除'>";
 	print "</form>";
 }
 catch (Exception $e)
@@ -67,6 +67,8 @@ catch (Exception $e)
 }
 
 ?>
+
+<a href="admin_setting.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

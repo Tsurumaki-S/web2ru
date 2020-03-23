@@ -35,7 +35,7 @@ msg_out_session(); else msg_in_session();
 <br />
 <br />
 
-STATUS
+STATUS CHANGE
 <br />
 <form method="post" class="btn-flat-border-base" action="member_change_status.php">
 	<input type="submit" class="btn-flat-border" name="new_status" value="在室" />

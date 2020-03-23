@@ -37,7 +37,7 @@ function display_table($dbh)
 	}
 
 	print '<table>';
-	print '<tr>';
+	print '<tr class="table-color">';
 	print '<th>NAME</th>';
 	print '<th>STATUS</th>';
 	print '<th>MEMO</th>';
