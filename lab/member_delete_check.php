@@ -25,6 +25,19 @@ msg_out_session(); else msg_in_session();
 
 try
 {
+
+	if(isset($_POST["member_code"])==false)
+	{
+		print "削除するメンバーが選択されていません。<br />";
+		print "<form>";
+		print "<input type='button' class='button-ok' onclick='history.back()' value='戻る'>";
+		print "</form>";
+		print '</section>';
+		print '</body>';
+		print '</html>';
+		exit();
+	}
+
 	$member_code = $_POST["member_code"];
 
 	$dsn      = "mysql:dbname=lab_attendance;host=localhost;charset=utf8";
@@ -61,9 +74,11 @@ catch(Exception $e)
 <br />
 <form method="post" action="member_delete_done.php">
 <input type="hidden" name="code" value="<?php print $member_code; ?>">
-<input type="button" onclick="history.back()" value="戻る">
-<input type="submit" value="OK">
+<!--<input type="button" onclick="history.back()" value="戻る">-->
+<input type="submit" class="button-ok" value="OK">
 </form>
+
+<a href="member_delete.php" class="btn-border-bottom">戻る</a>
 
 </section>
 

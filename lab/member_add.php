@@ -33,9 +33,11 @@ msg_out_session(); else msg_in_session();
 <input type="radio" name="admin" value="1">はい
 <input type="radio" name="admin" value="0" checked>いいえ<br />
 <br />
-<input type="button" onclick="history.back()" value="戻る">
-<input type="submit" value="OK">
+<!--<input type="button" onclick="history.back()" value="戻る">-->
+<input type="submit" class="button-ok" value="OK">
 </form>
+
+<a href="admin_setting.php" class="btn-border-bottom">戻る</a>
 
 </section>
 </body>
