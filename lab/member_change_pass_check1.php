@@ -65,12 +65,10 @@ try
 		}
 		else
 		{
-			print 'パスワードの変更<br />';
-			print '<br />';
 			print '<form method="post" action="member_change_pass_check2.php">';
 			print '新しいパスワードを入力してください。<br />';
 			print '<input type="password" name="pass1" style="width:200px"><br />';
-			print '再度、新しいパスワードを入力してください。<br />';
+			print '確認のため、再度入力してください。<br />';
 			print '<input type="password" name="pass2" style="width:200px"><br />';
 			print '<br />';
 			//print '<input type="button" onclick="history.back()" value="戻る">';
