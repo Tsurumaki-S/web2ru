@@ -55,9 +55,8 @@ if($member_pass != $member_pass2)
 
 if($member_name=="" || $member_pass=="" || $member_pass != $member_pass2)
 {
-	print "<form>";
-	print "<input type='button' onclick='history.back()' value='戻る'>";
-	print "</form>";
+	print '<a href="member_add.php" class="btn-border-bottom">戻る</a>';
+	exit();
 }
 else
 {
