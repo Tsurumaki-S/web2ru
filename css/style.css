@@ -359,6 +359,19 @@ border-radius:5px;
   color         : #ff8c00;
   background    : #ffffff;
 }
+@media screen and (max-width: 600px)
+{
+	.button-ok
+	{
+		display: flex;
+		width: 50%;
+		margin: 0 auto;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
 
 .table-color
 {
